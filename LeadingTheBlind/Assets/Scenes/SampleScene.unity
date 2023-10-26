@@ -615,6 +615,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242739306}
   m_CullTransparentMesh: 1
+--- !u!1 &251551635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251551636}
+  m_Layer: 0
+  m_Name: spawnTwo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &251551636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251551635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 53.04, z: -43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,13 +2240,13 @@ MonoBehaviour:
   transport: {fileID: 1277441729}
   networkAddress: localhost
   maxConnections: 100
-  disconnectInactiveConnections: 0
+  disconnectInactiveConnections: 1
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 2892437291353161878, guid: b3f68817c5536d0429f2effcda8af7f9,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 3608532920297152276, guid: 773d5449c7daa254baf13a12f6a65fe0, type: 3}
   snapshotSettings:
@@ -2235,6 +2266,8 @@ MonoBehaviour:
     type: 3}
   playerPrefab2: {fileID: 3608532920297152276, guid: 773d5449c7daa254baf13a12f6a65fe0,
     type: 3}
+  spawnOne: {fileID: 1410016518}
+  spawnTwo: {fileID: 251551636}
 --- !u!4 &1277441731
 Transform:
   m_ObjectHideFlags: 0
@@ -2244,7 +2277,7 @@ Transform:
   m_GameObject: {fileID: 1277441728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.18, z: -42.84}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2274,7 +2307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410016518}
   m_Layer: 0
-  m_Name: s
+  m_Name: spawnOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,7 +2322,7 @@ Transform:
   m_GameObject: {fileID: 1410016517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 5.886, z: -42.37}
+  m_LocalPosition: {x: 0, y: 5, z: -43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3983,3 +4016,4 @@ SceneRoots:
   - {fileID: 120140240}
   - {fileID: 1277441731}
   - {fileID: 1410016518}
+  - {fileID: 251551636}
