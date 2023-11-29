@@ -22,24 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Attacking",
-                    "type": "Button",
-                    "id": "41b20f46-4de1-486c-9fc9-93a0797bea9f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Looking",
-                    "type": "PassThrough",
-                    "id": "ea3cc303-4684-4728-8d74-72c293aa593b",
-                    "expectedControlType": "Delta",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -106,28 +88,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jumping",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "184c374a-2ed7-4bc2-9703-7099d0ca3a8b",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attacking",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c1c414b6-75b3-4622-83d3-d9a2669801c0",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Looking",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

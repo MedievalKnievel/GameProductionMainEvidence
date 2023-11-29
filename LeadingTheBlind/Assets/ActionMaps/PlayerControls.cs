@@ -44,24 +44,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Attacking"",
-                    ""type"": ""Button"",
-                    ""id"": ""41b20f46-4de1-486c-9fc9-93a0797bea9f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Looking"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""ea3cc303-4684-4728-8d74-72c293aa593b"",
-                    ""expectedControlType"": ""Delta"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -130,28 +112,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jumping"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""184c374a-2ed7-4bc2-9703-7099d0ca3a8b"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attacking"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c1c414b6-75b3-4622-83d3-d9a2669801c0"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Looking"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,8 +122,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Movement = m_PlayerActions.FindAction("Movement", throwIfNotFound: true);
         m_PlayerActions_Jumping = m_PlayerActions.FindAction("Jumping", throwIfNotFound: true);
-        m_PlayerActions_Attacking = m_PlayerActions.FindAction("Attacking", throwIfNotFound: true);
-        m_PlayerActions_Looking = m_PlayerActions.FindAction("Looking", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,16 +185,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
     private readonly InputAction m_PlayerActions_Movement;
     private readonly InputAction m_PlayerActions_Jumping;
-    private readonly InputAction m_PlayerActions_Attacking;
-    private readonly InputAction m_PlayerActions_Looking;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerActions_Movement;
         public InputAction @Jumping => m_Wrapper.m_PlayerActions_Jumping;
-        public InputAction @Attacking => m_Wrapper.m_PlayerActions_Attacking;
-        public InputAction @Looking => m_Wrapper.m_PlayerActions_Looking;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -252,12 +206,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started += instance.OnJumping;
             @Jumping.performed += instance.OnJumping;
             @Jumping.canceled += instance.OnJumping;
-            @Attacking.started += instance.OnAttacking;
-            @Attacking.performed += instance.OnAttacking;
-            @Attacking.canceled += instance.OnAttacking;
-            @Looking.started += instance.OnLooking;
-            @Looking.performed += instance.OnLooking;
-            @Looking.canceled += instance.OnLooking;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -268,12 +216,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started -= instance.OnJumping;
             @Jumping.performed -= instance.OnJumping;
             @Jumping.canceled -= instance.OnJumping;
-            @Attacking.started -= instance.OnAttacking;
-            @Attacking.performed -= instance.OnAttacking;
-            @Attacking.canceled -= instance.OnAttacking;
-            @Looking.started -= instance.OnLooking;
-            @Looking.performed -= instance.OnLooking;
-            @Looking.canceled -= instance.OnLooking;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -295,7 +237,5 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
-        void OnAttacking(InputAction.CallbackContext context);
-        void OnLooking(InputAction.CallbackContext context);
     }
 }
